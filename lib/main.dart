@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:slash_task/Products/presentation/screen/products_screen.dart';
 import 'package:slash_task/config/themes/app_theme.dart';
-import 'package:slash_task/screen/product_details_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
     return   MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: apptheme(),
-      home:const ProductDetailsScreen() ,
+      home:const ProductsScreen() ,
     );
   }
 }

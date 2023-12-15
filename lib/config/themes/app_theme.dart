@@ -15,6 +15,7 @@ ThemeData apptheme() {
       centerTitle: true,
       titleTextStyle: TextStyle(
         color: Colors.white,
+        fontSize: 32
       )
     )
   );
