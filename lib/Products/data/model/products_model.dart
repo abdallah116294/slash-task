@@ -25,6 +25,7 @@ class ProductsModel extends ProductsEntity {
         brand: json['brand'],
         category: json['category'],
         thumbnail: json['thumbnail'],
-        images: json['images']);
+        images: List<String>.from(json["images"])
+        );
   }
 }

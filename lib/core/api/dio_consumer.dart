@@ -13,12 +13,12 @@ import 'package:slash_task/injection_container.dart' as di;
 class DioConsumer implements ApiConsumer {
   final Dio client;
   DioConsumer({required this.client}) {
-    (client.httpClientAdapter as IOHttpClientAdapter).createHttpClient =
-        (HttpClient client) {
-      client.badCertificateCallback =
-          (X509Certificate cert, String host, int port) => true;
-      return client;
-    } as CreateHttpClient?;
+    // (client.httpClientAdapter as IOHttpClientAdapter).createHttpClient =
+    //     (HttpClient client) {
+    //   client.badCertificateCallback =
+    //       (X509Certificate cert, String host, int port) => true;
+    //   return client;
+    // } as CreateHttpClient?;
     client.options
       ..baseUrl = APIEndPoints.baseUrl
       ..responseType = ResponseType.plain
@@ -32,13 +32,21 @@ class DioConsumer implements ApiConsumer {
     }
   }
   @override
-  Future get(String path, {Map<String, dynamic>? queryParametes}) async {
+  Future<Map<String, dynamic>> get(String path,
+      {Map<String, dynamic>? queryParametes}) async {
     try {
       final response = await client.get(path, queryParameters: queryParametes);
-      return jsonDecode(response.data.toString());
+      return _handleResponseAsJson(response);
+     // return response.data;
     } on DioException catch (error) {
       _handleDioError(error);
+      throw();
     }
+  }
+
+  dynamic _handleResponseAsJson(Response<dynamic> response) {
+    final responseJson = json.decode(response.data.toString());
+    return responseJson;
   }
 
   dynamic _handleDioError(DioException error) {

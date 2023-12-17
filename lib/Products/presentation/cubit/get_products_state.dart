@@ -12,11 +12,11 @@ final class GetProductsInitial extends GetProductsState {}
 final class GetProductsLoadingState extends GetProductsState {}
 
 final class GetProducstLoadedState extends GetProductsState {
-  ProductsDataEntity productsDataEntity;
+  DummyProductsDataEntity productsDataEntity;
   GetProducstLoadedState({required this.productsDataEntity});
 }
 
 final class GetProductsErrorState extends GetProductsState {
   final String error;
- const  GetProductsErrorState({required this.error});
+  const GetProductsErrorState({required this.error});
 }

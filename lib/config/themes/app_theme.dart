@@ -6,7 +6,7 @@ ThemeData apptheme() {
     textButtonTheme: TextButtonThemeData(
       style: TextButton.styleFrom(
         
-        backgroundColor: Colors.lightGreen
+        backgroundColor: Colors.grey
       )
     ),
     appBarTheme:const AppBarTheme(
@@ -15,7 +15,7 @@ ThemeData apptheme() {
       centerTitle: true,
       titleTextStyle: TextStyle(
         color: Colors.white,
-        fontSize: 32
+        fontSize: 18
       )
     )
   );

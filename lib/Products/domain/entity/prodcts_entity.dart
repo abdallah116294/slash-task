@@ -29,6 +29,16 @@ required    this.category,
   @override
   List<Object?> get props =>[
     id,
+    title,
+    description,
+    price,
+    discountPercentage,
+    rating,
+    stock,
+    brand,
+    category,
+    thumbnail,
+    images
     
   ];
 

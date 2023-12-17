@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:slash_task/Products/presentation/cubit/get_products_cubit.dart';
+import 'package:slash_task/Products/presentation/screen/product_details_screen.dart';
 import 'package:slash_task/Products/presentation/screen/products_screen.dart';
 import 'package:slash_task/config/themes/app_theme.dart';
 import 'injection_container.dart' as di;
 
 void main() async {
+ WidgetsFlutterBinding.ensureInitialized();
   await di.init();
   runApp(const MyApp());
 }
